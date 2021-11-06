@@ -364,6 +364,7 @@ form > div > input:focus {
   .contact-2,
   .about-2 {
     right: 0;
+    border-top: 1px solid lightgray;
   }
   .web,
   .developer {
@@ -378,7 +379,8 @@ form > div > input:focus {
     font-size: 4rem;
   }
   .social a,
-  .me {
+  .me,
+  .tags1 {
     display: none;
   }
   .navbar ul {
