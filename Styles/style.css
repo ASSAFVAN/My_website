@@ -1,9 +1,5 @@
-:root {
-  --primary-color: (black);
-  --secondary-color: (white);
-}
 body {
-  width: 100vw;
+  height: 100vh;
   font-family: Ubuntu;
 }
 header {
@@ -11,7 +7,6 @@ header {
   justify-content: center;
   align-items: center;
   background-color: black;
-
   position: relative;
   top: -13vh;
   animation-name: header-down;
@@ -23,18 +18,12 @@ header {
   animation-timing-function: ease-out;
 }
 
-@keyframes header-down {
-  to {
-    top: 0;
-  }
-}
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 13vh;
   width: 70vw;
-  text-align: center;
 }
 ul {
   list-style: none;
@@ -52,9 +41,6 @@ a {
   background-size: cover;
   background-image: url("../Assets/Img/me1-copy.png");
 }
-/* .me:hover {
-  background-color: crimson;
-} */
 .navbar ul {
   display: flex;
   justify-content: space-between;
@@ -122,14 +108,34 @@ main {
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-delay: 0s;
   animation-direction: alternate;
   animation-timing-function: ease-out;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
 }
+
+.column-2,
+.contact-2,
+.about-2 {
+  position: relative;
+  right: -100vw;
+  animation-name: right-column;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-left: 1px solid lightgray;
+}
+
 .tags1 {
   position: absolute;
   top: 0;
@@ -168,20 +174,6 @@ main {
   top: 100px;
 }
 
-@keyframes left-column {
-  to {
-    left: 0;
-  }
-}
-@keyframes popup {
-  50% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 0%;
-  }
-}
-
 .contact-1-container,
 .contact-2-container,
 .about-1-container,
@@ -190,8 +182,6 @@ main {
   justify-content: center;
   flex-direction: column;
   align-content: center;
-  width: 30vw;
-  height: 30vw;
 }
 
 .contact-1-container h2,
@@ -200,12 +190,10 @@ main {
 }
 .contact-1-container p,
 .about-1-container p {
-  position: relative;
   font-size: 1.2rem;
   line-height: 2rem;
   text-align: left;
   align-self: flex-start;
-  height: 10vh;
   color: #333;
 }
 .social-container {
@@ -240,11 +228,9 @@ main {
 }
 .form-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   align-content: center;
-  width: 30vw;
-  height: 30vw;
 }
 .form-title {
   font-size: 2rem;
@@ -281,31 +267,6 @@ form > div > input:focus {
 .submit-btn:hover {
   color: crimson;
 }
-
-.column-2,
-.contact-2,
-.about-2 {
-  position: relative;
-  right: -100vw;
-  animation-name: right-column;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-direction: alternate;
-  animation-timing-function: ease-out;
-  background-color: white;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  border-left: 1px solid lightgray;
-}
-
-@keyframes right-column {
-  to {
-    right: 0;
-  }
-}
 .web {
   align-self: flex-end;
   opacity: 0;
@@ -318,14 +279,6 @@ form > div > input:focus {
   animation-direction: alternate;
   animation-timing-function: ease-in;
   color: crimson;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100%;
-  }
 }
 .developer {
   align-self: flex-start;
@@ -341,17 +294,8 @@ form > div > input:focus {
   animation-timing-function: ease-in;
   color: black;
 }
-@keyframes fadeIn2 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
 
 .footer-container {
-  /* background-color: darkgoldenrod; */
   height: 9vh;
   display: flex;
   justify-content: center;
@@ -359,4 +303,93 @@ form > div > input:focus {
   border-top: 2px solid lightgray;
   font-size: 1.5rem;
   color: gray;
+}
+/* screen only */
+@media (min-width: 500px) {
+  @keyframes header-down {
+    to {
+      top: 0;
+    }
+  }
+
+  @keyframes right-column {
+    to {
+      right: 0;
+    }
+  }
+  @keyframes left-column {
+    to {
+      left: 0;
+    }
+  }
+  @keyframes popup {
+    50% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 0%;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes fadeIn2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+}
+/* mobile only */
+@media (max-width: 500px) {
+  header {
+    top: 0;
+  }
+  .flex-columns {
+    flex-direction: column;
+  }
+  .column-1,
+  .contact-1,
+  .about-1 {
+    left: 0;
+  }
+  .column-2,
+  .contact-2,
+  .about-2 {
+    right: 0;
+    border-top: 1px solid lightgray;
+  }
+  .web,
+  .developer {
+    opacity: 1;
+  }
+  .web {
+    align-self: center;
+    font-size: 6rem;
+  }
+  .developer {
+    align-self: center;
+    font-size: 4rem;
+  }
+  .social a,
+  .me,
+  .tags1 {
+    display: none;
+  }
+  .navbar ul {
+    justify-content: center;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
+  .navbar ul a {
+    padding: 3px;
+  }
 }
